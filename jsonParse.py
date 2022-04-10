@@ -18,8 +18,8 @@ for users in data['INSERT MAIN GROUP NAME IN YOUR JSON FILE']:
 import csv
 
 with open('newContent.csv', 'w') as x:
-    fieldName = data['users'][0].keys()
+    fieldName = data['ADD MAIN JSON GROUP'][0].keys()
     writer = csv.DictWriter(x,fieldnames=fieldName)
     writer.writeheader()
-    for users in data['users']:
+    for users in data['ADD MAIN JSON GROUP']:
         writer.writerow(users)
