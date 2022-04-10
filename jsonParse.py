@@ -13,4 +13,20 @@ with open('INSERT .JSON FILE HERE', 'r') as f:
 
 for users in data['INSERT MAIN GROUP NAME IN YOUR JSON FILE']:
     print(users['SUBGROUP 1'], users['SUBGROUP 2'])
+    
+# To insert into a .csv file use this...
+import csv
+## Add Headers
+header = ['name', 'email']
+
+with open('newContent.csv', 'w', encoding='UTF8', newline='') as x:
+    writer = csv.writer(x)
+
+    # write the header
+    writer.writerow(header)
+
+    # write the data
+    for users in data['users']:
+        writer.writerow(users['name'])
+        print ('made it')
         
