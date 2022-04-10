@@ -16,17 +16,10 @@ for users in data['INSERT MAIN GROUP NAME IN YOUR JSON FILE']:
     
 # To insert into a .csv file use this...
 import csv
-## Add Headers
-header = ['name', 'email']
 
-with open('newContent.csv', 'w', encoding='UTF8', newline='') as x:
-    writer = csv.writer(x)
-
-    # write the header
-    writer.writerow(header)
-
-    # write the data
+with open('newContent.csv', 'w') as x:
+    fieldName = data['users'][0].keys()
+    writer = csv.DictWriter(x,fieldnames=fieldName)
+    writer.writeheader()
     for users in data['users']:
-        writer.writerow(users['name'])
-        print ('made it')
-        
+        writer.writerow(users)
